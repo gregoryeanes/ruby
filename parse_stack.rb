@@ -1,3 +1,8 @@
+# parse_stack.rb
+# Greg Eanes 7/6/2019
+# This file looks up a card stack string (stored in yaml format)
+# and parses it into an array of card values.
+
 require "yaml"
 
 def parse_stack(stack_string)
@@ -10,13 +15,9 @@ def parse_stack(stack_string)
     parsed_list.push(card)
   end
 
-  p parsed_list
+  parsed_list
 end
 
 if File.exist?("card_stacks.yaml")
     @card_stacks = YAML.load_file("card_stacks.yaml")
 end
-
-# p @card_stacks
-p @card_stacks["aronson"]
-parse_stack(@card_stacks["aronson"])
